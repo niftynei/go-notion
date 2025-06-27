@@ -126,7 +126,7 @@ type PropertyValue struct {
 	People []*User `json:"people,omitempty"`
 	// Files is an array of file references.
 	Files    []*File `json:"files,omitempty"`
-	Checkbox bool    `json:"checkbox,omitempty"`
+	Checkbox *bool    `json:"checkbox,omitempty"`
 	// URL describes a web address (i.e. "http://worrydream.com/EarlyHistoryOfSmalltalk/").
 	URL string `json:"url,omitempty"`
 	// Email describes an email address (i.e. "hello@example.org").
@@ -189,7 +189,7 @@ func NewFilesPropertyValue(files ...*File) *PropertyValue {
 }
 
 // NewCheckboxPropertyValue creates a CheckboxPropertyValue.
-func NewCheckboxPropertyValue(check bool) *PropertyValue {
+func NewCheckboxPropertyValue(check *bool) *PropertyValue {
 	return &PropertyValue{Type: PropertyCheckbox, Checkbox: check}
 }
 
