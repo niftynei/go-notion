@@ -116,7 +116,7 @@ type PropertyValue struct {
 	RichText    []*RichText     `json:"rich_text,omitempty"`
 	Number      float64         `json:"number,omitempty"`
 	Select      *SelectOption   `json:"select,omitempty"`
-	MultiSelect []*SelectOption `json:"multi_select,omitempty"`
+	MultiSelect *[]*SelectOption `json:"multi_select,omitempty"`
 	Date        *Date           `json:"date,omitempty"`
 	Formula     *FormulaValue   `json:"formula,omitempty"`
 	// Relation is an array of page references.
@@ -165,7 +165,7 @@ func NewSelectPropertyValue(option *SelectOption) *PropertyValue {
 
 // NewMultiSelectPropertyValue creates a MultiSelectPropertyValue.
 func NewMultiSelectPropertyValue(options ...*SelectOption) *PropertyValue {
-	return &PropertyValue{Type: PropertyMultiSelect, MultiSelect: options}
+	return &PropertyValue{Type: PropertyMultiSelect, MultiSelect: &options}
 }
 
 // NewDatePropertyValue creates a DatePropertyValue.
