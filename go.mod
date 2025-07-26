@@ -1,4 +1,4 @@
-module github.com/sorcererxw/go-notion
+module github.com/niftynei/go-notion
 
 go 1.16
 

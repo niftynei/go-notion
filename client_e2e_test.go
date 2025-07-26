@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sorcererxw/go-notion"
+	"github.com/niftynei/go-notion"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
