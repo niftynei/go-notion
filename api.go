@@ -91,6 +91,7 @@ type (
 		Files       *FilesFilterCondition       `json:"files,omitempty"`
 		Relation    *RelationFilterCondition    `json:"relation,omitempty"`
 		Formula     *FormulaFilterCondition     `json:"formula,omitempty"`
+		ID          *UniqueIDFilterCondition    `json:"unique_id,omitempty"`
 		// And is Compound filter.
 		And []*Filter `json:"and,omitempty"`
 		// Or is Compound filter.
@@ -187,6 +188,15 @@ type (
 		Checkbox *CheckboxFilterCondition `json:"checkbox,omitempty"`
 		Number   *NumberFilterCondition   `json:"number,omitempty"`
 		Date     *DateFilterCondition     `json:"date,omitempty"`
+	}
+
+	UniqueIDFilterCondition struct {
+		Equals               float64 `json:"equals,omitempty"`
+		DoesNotEqual         float64 `json:"does_not_equal,omitempty"`
+		GreaterThan          float64 `json:"greater_than,omitempty"`
+		GreaterThanOrEqualTo float64 `json:"greater_than_or_equal_to,omitempty"`
+		LessThan             float64 `json:"less_than,omitempty"`
+		LessThanOrEqualTo    float64 `json:"less_than_or_equal_to,omitempty"`
 	}
 )
 

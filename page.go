@@ -107,6 +107,12 @@ type RollupValue struct {
 	Array []*PropertyValue `json:"array,omitempty"`
 }
 
+// UniqueID is the unique_id value. It is only GET-table
+type UniqueID struct {
+	Number float64	       `json:"number,omitempty"`
+	Prefix string          `json:"prefix,omitempty"`
+}
+
 // PropertyValue is the property value of Page.
 // It must contain a key corresponding with the value of type. The value is an object containing type-specific data.
 type PropertyValue struct {
@@ -141,6 +147,8 @@ type PropertyValue struct {
 	CreatedTime *time.Time `json:"created_time,omitempty"`
 	// LastEditedTime contains the date and time when this page was last updated.
 	LastEditedTime *time.Time `json:"last_edited_time,omitempty"`
+	// Unique ID is a unique ID for this Page
+	UniqueID *UniqueID `json:"unique_id,omitempty"`
 }
 
 // NewTitlePropertyValue creates a TitlePropertyValue.
@@ -206,6 +214,11 @@ func NewEmailPropertyValue(email string) *PropertyValue {
 // NewPhoneNumberPropertyValue creates a PhonePropertyValue.
 func NewPhoneNumberPropertyValue(phoneNumber string) *PropertyValue {
 	return &PropertyValue{Type: PropertyPhoneNumber, PhoneNumber: phoneNumber}
+}
+
+// NewUniqueIDPropertyValue creates a UniqueIDPropertyValue.
+func NewUniqueIDPropertyValue(uniqueID *UniqueID) *PropertyValue {
+	return &PropertyValue{Type: PropertyUniqueID, UniqueID: uniqueID}
 }
 
 // File reference is an object with an name property,

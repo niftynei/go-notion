@@ -38,6 +38,7 @@ const (
 	PropertyCreatedBy      PropertyType = "created_by"
 	PropertyLastEditedTime PropertyType = "last_edited_time"
 	PropertyLastEditedBy   PropertyType = "last_edited_by"
+	PropertyUniqueID       PropertyType = "unique_id"
 )
 
 // NumberFormat is format of number property value.
