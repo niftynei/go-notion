@@ -5,7 +5,7 @@ type RichTextType string
 
 // RichTextType enums.
 const (
-	RichTextText     RichTextType = "text"
+	RichTextText     RichTextType = "rich_text"
 	RichTextMention  RichTextType = "mention"
 	RichTextEquation RichTextType = "equation"
 )

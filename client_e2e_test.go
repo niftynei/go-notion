@@ -122,7 +122,7 @@ func TestClientE2E(t *testing.T) {
 							Bold: true,
 						},
 						Type: notion.RichTextText,
-						Text: &notion.Text{Content: "text"},
+						Text: &notion.Text{Content: "rich_text"},
 					},
 				},
 			},
@@ -130,7 +130,7 @@ func TestClientE2E(t *testing.T) {
 		require.NoError(t, err)
 		p, err := client.RetrievePage(ctx, page.ID)
 		require.NoError(t, err)
-		require.Equal(t, "text", p.Properties["content"].RichText[0].PlainText)
+		require.Equal(t, "rich_text", p.Properties["content"].RichText[0].PlainText)
 	})
 	t.Run("search", func(t *testing.T) {
 		_, _, _, err := client.Search(ctx, notion.SearchParam{

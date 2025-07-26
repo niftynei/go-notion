@@ -56,31 +56,31 @@ var _ json.Marshaler = &Block{}
 
 // Paragraph is paragraph block.
 type Paragraph struct {
-	Text     []*RichText `json:"text"`
+	Text     []*RichText `json:"rich_text"`
 	Children []*Block    `json:"children,omitempty"`
 }
 
 // Heading is the common type of Heading1, Heading2, Heading3.
 type Heading struct {
-	Text []*RichText `json:"text,omitempty"`
+	Text []*RichText `json:"rich_text,omitempty"`
 }
 
 // ListItem is the common type of BulletedListItem and NumberedListItem.
 type ListItem struct {
-	Text     []*RichText `json:"text"`
+	Text     []*RichText `json:"rich_text"`
 	Children []*Block    `json:"children,omitempty"`
 }
 
 // ToDo is todo item.
 type ToDo struct {
-	Text     []*RichText `json:"text"`
+	Text     []*RichText `json:"rich_text"`
 	Children []*Block    `json:"children,omitempty"`
 	Checked  bool        `json:"checked,omitempty"`
 }
 
 // Toggle is toggle item.
 type Toggle struct {
-	Text     []*RichText `json:"text"`
+	Text     []*RichText `json:"rich_text"`
 	Children []*Block    `json:"children,omitempty"`
 }
 

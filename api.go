@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-const apiVersion = "2021-05-13"
+const apiVersion = "2021-08-16"
 
 // API is declaration of Notion.so APIs.
 type API interface {
