@@ -25,6 +25,7 @@ type Settings struct {
 	Token      string
 	Endpoint   string
 	HTTPClient *http.Client
+	Debug      bool
 }
 
 // NewClient creates a new API client.
@@ -33,6 +34,7 @@ func NewClient(settings Settings) API {
 		token:      settings.Token,
 		endpoint:   settings.Endpoint,
 		httpclient: settings.HTTPClient,
+		debug:      settings.Debug,
 	}
 	if c.endpoint == "" {
 		c.endpoint = "https://api.notion.com"
