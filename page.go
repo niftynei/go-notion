@@ -241,7 +241,8 @@ type InternalFile struct {
 
 // Date represents a datetime or time range.
 type Date struct {
-	Start time.Time
+	Start time.Time `json:"start"`
 	// If null, this property's date value is not a range.
-	End *time.Time
+	End *time.Time `json:"end,omitempty"`
+	TimeZone string `json:"time_zone,omitempty"`
 }
